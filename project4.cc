@@ -119,6 +119,10 @@ int Sampling(int items[], int n){
 
     return 0;
 }*/
+
+Sampler::Sampler(int n){
+
+}
 DisjointSet::DisjointSet(){
 
 }

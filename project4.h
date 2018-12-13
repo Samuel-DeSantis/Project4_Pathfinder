@@ -11,7 +11,7 @@ class Sampler(){
 public:
     Sampler(int n)
     ~Sampler(){}
-    int getSample()
+    int getSample();
 }
 
 class DisjointSet(){
