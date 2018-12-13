@@ -1,9 +1,4 @@
-#include "exceptions.h"
-#include "pathfinder.h"
-#include <iostream>
-#include <math.h>
-#include <cstdlib>
-#include <queue>
+#include "project4.h"
 
 using namespace std;
 
@@ -124,7 +119,15 @@ int Sampling(int items[], int n){
 
     return 0;
 }*/
+DisjointSet::DisjointSet(){
 
+}
+DisjointSet::find(int a){
+
+}
+DisjointSet::join(int a, int b){
+
+}
 
 //===========TEST LINES==========
 //TEST LINE
