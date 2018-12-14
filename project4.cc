@@ -1,3 +1,9 @@
+/*============================
+   Project 4 - Path Finder
+------------------------------
+Samuel DeSantis & Michael Good
+============================*/
+
 #include "project4.h"
 
 using namespace std;
@@ -11,8 +17,6 @@ int columns = 0;
 const int SIZE = 10000;
 int n = 1;
 int items[SIZE];
-int rank[SIZE];
-int elements[SIZE];
 int e = 0;
 int a, b, Nr, Nc;
 
@@ -27,10 +31,10 @@ int MazeSolve();
 int main(){
     Start();
     Sampling(items, n);
-    //DisjointFind(elements[], rank[], a);
-    //DisjointUnion();
-    //MazeGenerate(Nr, Nc);
-    //MazeSolve();
+    DisjointFind(elements[], rank[], a);
+    DisjointUnion();
+    MazeGenerate(Nr, Nc);
+    MazeSolve();
     return 0;
 }
 int Start(){
@@ -63,13 +67,13 @@ int Sampling(int items[], int n){
     items[i] = items[n];
     return e;
 }
-/*int DisjointFind(int elements[], int rank[], int a){
+int DisjointFind(int elements[], int rank[], int a){
     if (elements[a] != a){
-        //elements[a] = DisjointFind(elements[a])
+        elements[a] = DisjointFind(elements[a])
     }
     return elements[a];
-}*/
-/*int DisjointUnion(){
+}
+int DisjointUnion(){
     a = DisjointFind(a);
     b = DisjointFind(b);
 
@@ -85,8 +89,8 @@ int Sampling(int items[], int n){
         }
     }
     return 0;
-}*/
-/*int MazeGenerate(int Nr, int Nc){
+}
+int MazeGenerate(int Nr, int Nc){
     int i = 0;
     for (int r = 0; r < Nc -1; ++r){
         for (int c = 0; c < Nc -1; ++c){
@@ -95,42 +99,49 @@ int Sampling(int items[], int n){
     }
     nSum = Nr*Nc;
     nElements = 4*Nr*Nc;
-    //Ds = DisjointSet(nSum);
-    //Sampler(nElements);
+    Ds = DisjointSet(nSum);
+    Sampler(nElements);
 
     i = 0;
     while (i < nSum -1){
         do{
             do{
-                //e = Sampler.getSample();
+                e = Sampler.getSample();
             }
-            while();
-
+            while(e != Nc);
+            (r1, c1, dir1) = decodeCell(e);
+            (r2, c2) = (r1 + 1, r2 + 1)
         }
-        while();
-        //DisjointUnion(R1, R2);
+        while(DisjointFind(r1) = DisjointFind(r2));
+        DisjointUnion(R1, R2);
         ++i;
     }
     return 0;
-}*/
-/*int MazeSolve(){
-    s.push()
+}
+int MazeSolve(){
+    s.push(encode(0, 0, 0))
     //Mark as visited
 
     return 0;
-}*/
-
+}
 Sampler::Sampler(int n){
 
 }
 DisjointSet::DisjointSet(){
-
+    int rank[SIZE];
+    int elements[SIZE];
+    for(int w = 0; w < SIZE; w++){
+    elements[w] = w;
+    }
+    for(int x = 0; x < SIZE; w++){
+    rank[i] = 0;
+    }
 }
 DisjointSet::find(int a){
 
 }
 DisjointSet::join(int a, int b){
-
+    DisjointUnion();
 }
 
 //===========TEST LINES==========
